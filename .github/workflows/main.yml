@@ -1,4 +1,4 @@
-﻿name: Deploy to GitHub Pages
+﻿name: Build and Deploy
 
 on:
   push:
@@ -19,38 +19,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffbf834c0629c193d3b7b1d2c17e56ba07a91c
 
-      - name: Detect package manager
-        id: detect
-        run: |
-          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-          elif [ -f "${{ github.workspace }}/pnpm-lock.yaml" ]; then
-            echo "manager=pnpm" >> $GITHUB_OUTPUT
-          else
-            echo "manager=npm" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@8f152de45cc393bb48ce5d6f9a01a8c4dbc93cac
         with:
           node-version: "20"
-          cache: ${{ steps.detect.outputs.manager }}
+          cache: "npm"
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@1f0c5cde4bc74cd7e1254d0cb4de8d35019ef2f3
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build with Next.js
+      - name: Build
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /Dream-Print-UA
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@3846b742ef8b6e4a867be2e3d7c1dd2a0fe0e8cb
         with:
           path: ./out
 
@@ -63,4 +52,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@decdde0ac072f6dcbe43ac6ae2f1410b5b4f051c
