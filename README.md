@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dream Print UA - Сайт магазину сублімаційного друку
 
-## Getting Started
+Сучасний, інтерактивний сайт для Dream Print UA - магазину послуг сублімаційного друку на різних поверхнях.
 
-First, run the development server:
+## 🎨 Особливості
+
+- **Анімована головна сторінка** - Розкидані картки продукції з красивими анімаціями
+- **Галерея продукції** - Завантажування та управління фотографіями
+- **Прайс-лист** - Детальна інформація про ціни на всі послуги
+- **Про компанію** - Інформація про услуги
+- **Адаптивний дизайн** - Для мобільних, планшетів та комп'ютерів
+- **Сучасні технології** - Next.js, React, TypeScript, Tailwind CSS
+
+## 🚀 Швидкий старт
 
 ```bash
+# Встановлення залежностей
+npm install
+
+# Запуск сервера розробки
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Сайт буде доступний за адресою `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Побудова для GitHub Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## 🌐 Розгортання на GitHub Pages
 
-To learn more about Next.js, take a look at the following resources:
+1. Форкніть репозиторій на GitHub
+2. У Settings → Pages виберіть "GitHub Actions" як джерело
+3. Push в main гілку автоматично розгортатиме сайт
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ваш сайт буде доступний за адресою:
+```
+https://yourusername.github.io/dream-print-ua/
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Структура проекту
 
-## Deploy on Vercel
+```
+src/
+├── app/              # Сторінки (Next.js App Router)
+│   ├── page.tsx      # Головна сторінка
+│   ├── products/     # Послуги
+│   ├── pricing/      # Прайс-лист
+│   ├── about/        # Про нас
+│   └── gallery/      # Галерея
+├── components/       # React компоненти
+│   ├── Navigation.tsx
+│   ├── AnimatedDesktop.tsx
+│   ├── DesktopCard.tsx
+│   └── ImageUploader.tsx
+└── data/            # Дані про продукти
+    └── products.ts
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 Послуги
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 🕯️ Свічки
+- 🔑 Брелоки
+- ✨ Підвіски
+- 💎 Вироби з епоксидки
+- 🧵 Вишивка
+- 🎨 Гіпсові фігурки
+- 🎯 Фігурки з пластику
+
+## 📞 Контактна інформація
+
+- **Email**: info@dreamprint.ua
+- **Адреса**: Київ, Україна
+
+## 🤝 Розробка
+
+Розроблено для Dream Print UA за допомогою:
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+
+---
+
+Розроблено з ❤️ для Dream Print UA
