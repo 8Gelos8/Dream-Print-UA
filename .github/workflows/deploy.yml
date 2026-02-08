@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+﻿name: Deploy to GitHub Pages
 
 on:
   push:
@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@eef61447b9ff4aafe5dcd72be0563c3d987f5c48
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@60edb5dd545a775178f52524783378bca2d6d4736
         with:
           node-version: "20"
           cache: "npm"
@@ -34,7 +34,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
         with:
           path: ./out
 
@@ -47,4 +47,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164830723ce3bfc27c080f6dca6d63ea99
