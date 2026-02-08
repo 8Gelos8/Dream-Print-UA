@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 permissions:
   contents: read
@@ -22,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@eef61447b9ff4aafe5dcd72be0563c3d987f5c48
+        uses: actions/checkout@b4ffbf834c0629c193d3b7b1d2c17e56ba07a91c
 
       - name: Setup Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378bca2d6d4736
+        uses: actions/setup-node@8f152de45cc393bb48ce5d6f9a01a8c4dbc93cac
         with:
           node-version: "20"
           cache: "npm"
@@ -39,7 +36,7 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /Dream-Print-UA
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        uses: actions/upload-pages-artifact@3846b742ef8b6e4a867be2e3d7c1dd2a0fe0e8cb
         with:
           path: ./out
 
@@ -53,4 +50,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@d6db90164830723ce3bfc27c080f6dca6d63ea99
+        uses: actions/deploy-pages@decdde0ac072f6dcbe43ac6ae2f1410b5b4f051c
