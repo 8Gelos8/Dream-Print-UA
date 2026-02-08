@@ -17,10 +17,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@eef61447b9ff4aafe5dcd72be0563c3d987f5c48
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@8f152de45cc393bb48ce5d6f9a01a8c4dbc93cac
         with:
           node-version: '20'
           cache: npm
@@ -34,7 +34,7 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /Dream-Print-UA
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@3846b742ef8b6e4a867be2e3d7c1dd2a0fe0e8cb
         with:
           path: ./out
 
@@ -47,4 +47,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@decdde0ac072f6dcbe43ac6ae2f1410b5b4f051c
